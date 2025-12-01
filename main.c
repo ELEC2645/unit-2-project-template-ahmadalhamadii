@@ -8,7 +8,7 @@
 #include <math.h>
 #include "funcs.h"
 
-/* Prototypes mirroring the C++ version */
+/* Prototypes */
 static void main_menu(void);            /* runs in the main loop */
 static void print_main_menu(void);      /* output the main menu description */
 static int  get_user_input(void);       /* get a valid integer menu choice */
@@ -19,7 +19,7 @@ static int  is_integer(const char *s);  /* validate integer string */
 int main(void)
 {
     /* this will run forever until we call exit(0) in select_menu_item() */
-    for(;;) {
+    for (;;) {
         main_menu();
     }
     /* not reached */
@@ -50,7 +50,7 @@ static int get_user_input(void)
             exit(1);
         }
 
-        // strip trailing newline
+        /* strip trailing newline */
         buf[strcspn(buf, "\r\n")] = '\0';
 
         if (!is_integer(buf)) {
@@ -97,16 +97,15 @@ static void select_menu_item(int input)
 
 static void print_main_menu(void)
 {
-    printf("\n----------- Scientific Engineering Calculator -----------\n");
+    printf("\n Ahmad's Scientific Engineering Calculator \n");
     printf("\n"
            "\t1. Basic scientific calculator\n"
            "\t2. Engineering tools\n"
            "\t3. Unit conversions\n"
            "\t4. Log & test tools\n"
            "\t5. Exit\n");
-    printf("---------------------------------------------------------\n");
+    printf("\n");
 }
-
 static void go_back_to_main(void)
 {
     char buf[64];
